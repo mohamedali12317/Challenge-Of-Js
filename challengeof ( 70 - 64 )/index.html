@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+ <script>
+  function getDetails(zName, zAge, zCountry) {
+  function namePattern() {
+    // Write Your Code Here
+    // Osama Mohamed => Osama M.
+    // Ahmed ali => Ahmed A.
+
+    // بس انا عملت اية انا بقلو يبداءمن الصفر لحد ما اعمل مسافة 
+    // والتانية قلتلو ابتدى من عند اول المسافة واخد الى بعدة ما دى ميزتها ان انا اقدر احدد فا قلتلو خد 2
+    // فى غلطة عملتها ان بدل ما اعمل الريترن عملت كونسول ولزم اعمل الريترن عشان ينفذ
+     return `${zName.slice(0, zName.indexOf(" "))}${zName.substr(zName.indexOf(" "), 2).toUpperCase()}`
+  }
+  function ageWithMessage() {
+    // Write Your Code Here
+    // 38 Is My Age => Your Age Is 38
+    // 32 Is The Age => Your Age Is 32
+
+    // انها بتاخد الارقام وسط الكلام parseInt لو تفتكر ميزة 
+    return `Your Age IS ${parseInt(zAge)}`;
+  }
+  function countryTwoLetters() {
+    // Write Your Code Here
+    // Egypt => You Live In EG
+    // Syria => You Live In SY
+
+    return `${zCountry.slice(0 , 2).toUpperCase()}`;
+  }
+  function fullDetails() {
+    // Write Your Code Here
+    return `Hello ${namePattern()}, ${ageWithMessage()}, ${countryTwoLetters()}`;
+  }
+  return fullDetails(); // Do Not Edit This
+}
+
+console.log(getDetails("Osama Mohamed", "38 Is My Age", "Egypt"));
+// Hello Osama M., Your Age Is 38, You Live In EG
+
+console.log(getDetails("Mohamed ali", "25 Is The Age", "Syria"));
+// Hello Mohamed A., Your Age Is 25, You Live In SY
+
+
+console.log("=".repeat(40));
+
+// عايز احول الفانكشن الى ارو فانكشن 
+
+function itsMe() {
+  return `Iam A Normal Function`;
+}
+
+console.log(itsMe()); // Iam A Normal Function
+
+itsMe = () => `Iam A Normal Function`;
+
+console.log(itsMe()); // Iam A Normal Function
+
+
+function urlCreate(protocol, web, tld) {
+  return `${protocol}://www.${web}.${tld}`;
+}
+
+console.log(urlCreate("https", "elzero", "org")); // https://www.elzero.org
+
+
+urlCreate = (protocol, web, tld) => `${protocol}://www.${web}.${tld}`;
+
+console.log(urlCreate("https", "elzero", "org")); // https://www.elzero.org
+
+console.log("=".repeat(40));
+
+
+// برضو محتاج احولها الى ارو فانكشن
+
+function checker(zName) {
+  return function (status) {
+    return function (salary) {
+      return status === "Available" ? `${zName}, My Salary Is ${salary}` : `Iam Not Avaialble`;
+    };
+  };
+}
+
+checker = (zName) => (status) => (salary) => status === "Available" ? `${zName}, My Salary Is ${salary}` : `Iam Not Avaialble`;
+
+console.log(checker("Osama")("Available")(4000)); // Osama, My Salary Is 4000
+console.log(checker("Ahmed")("Not Available")()); // Iam Not Avaialble
+
+console.log("=".repeat(40));
+
+// انا شراحو فى نوشن  
+
+
+function specialMix(...data) {
+    // Your Code Here
+    let result = 0;
+    for(let i = 0; i < data.length; i++){
+        if(isNaN(parseInt(data[i])) === false){
+            result += parseInt(data[i]);
+        } // if 
+
+    } // for 
+
+    if(result === 0){
+        return `All Is Strings`;
+    } // if 
+    return result;
+
+} // function specialMix
+
+console.log(specialMix(10, 20, 30)); // 60
+console.log(specialMix("10Test", "Testing", "20Cool")); // 30
+console.log(specialMix("Test10", "Testing", "Cool20")); // All Is Strings
+console.log(specialMix("Testing", "10Testing", "40Cool")); // 50
+console.log(specialMix("Test", "Cool", "Test")); // All Is Strings
+
+ </script>
+</body>
+</html>

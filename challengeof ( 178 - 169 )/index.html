@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+ <script src="articles.json"></script>
+ <script>
+  
+let myRequest = new XMLHttpRequest();
+myRequest.open("GET", "articles.json");
+myRequest.send();
+
+// console.log(myRequest);
+
+myRequest.onreadystatechange = function(){
+    if(this.readyState === 4 && this.status === 200){
+        console.log(this.responseText);
+        setTimeout(() => {
+            console.log("Data Loaded");
+        }, 0);
+    }
+} // console.log("Data Loaded"); هو كان طالب منى انها تتحط تحت الجيسون على طول 
+// ولو تفتكر دى بتنزل بس بعد الكنسول على طول
+"================================================================================="
+let myRequest2 = new XMLHttpRequest();
+myRequest2.open("GET", "articles.json");
+myRequest2.send();
+
+myRequest2.onreadystatechange = function(){
+    if(this.readyState === 4 && this.status === 200){
+        let mainData = JSON.parse(this.responseText); // انا حولتها لجافا اسكربت اوبجيكت    
+
+        for(let i = 0; i < mainData.length; i++){
+            mainData[i].category = "All"; // انا خاليت الكاتجرى كل الى فيها اول 
+        }
+        console.log(mainData);
+        console.log(typeof mainData);
+
+        let updatedData = JSON.stringify(mainData);
+        console.log(updatedData);
+        console.log(typeof updatedData);
+    }
+}
+"================================================================================="
+let myRequest3 = new XMLHttpRequest();
+myRequest3.open("GET","articles.json");
+myRequest3.send();
+
+
+myRequest3.onreadystatechange = function(){
+    if(this.readyState === 4 && this.status === 200){
+        let minData = JSON.parse(this.responseText);
+        let div = document.createElement("div");
+        div.id = "data";
+
+        for(let i = 0; i < minData.length; i++){
+            let title = document.createElement("h2");
+            let titleText = document.createTextNode(minData[i].title);
+            title.appendChild(titleText);
+
+            let body = document.createElement("p");
+            let bodyText = document.createTextNode(minData[i].body);
+            body.appendChild(bodyText);
+
+            let category = document.createElement("p");
+            let categoryText = document.createTextNode(minData[i].category);
+            category.appendChild(categoryText);
+
+            let author = document.createElement("p");
+            let authorText = document.createTextNode(minData[i].author);
+            author.appendChild(authorText);
+
+            let data = document.createElement("div");
+            data.appendChild(title);
+            data.appendChild(body );
+            data.appendChild(category);
+            data.appendChild(author);
+
+            div.appendChild(data);
+            document.body.appendChild(div);
+        }
+    }
+}
+
+ </script>
+</body>
+</html>

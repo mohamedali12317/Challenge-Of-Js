@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+ <script>
+  // Examples
+console.log(100_000); // 100000
+console.log(100000); // 100000
+console.log(5e4 + 5e4); // 100000
+
+// Your Solutions
+console.log(Math.round(100000.4)); // 100000
+console.log(Math.trunc(100000.99)); // 100000
+console.log(Math.ceil(99999.2)); // 100000
+console.log(Math.floor(100000.99)); // 100000
+console.log(Math.pow(10, 5)); // 100000
+console.log(Number(100000.4.toFixed(0))); // 100000
+console.log(10 ** 5); // 100000
+console.log(parseInt("100000.500 Mostafa")); // 100000
+console.log(Math.round(parseFloat("100000.400 mohamed"))); // 100000
+console.log(Math.max(99999, 8000, 100000, 50000)); // 100000
+
+
+// لتخرج بالنتيجة المطلوبة في المثال MIN_SAFE_INTEGER إستخدم
+// to bring the bigiest number
+
+console.log(Number.MIN_SAFE_INTEGER * -1); // 9007199254740991
+
+console.log(Number.MIN_SAFE_INTEGER); // -9007199254740991 فا عشان كدة ضربت فى سالب واحد
+
+// لتخرج بالنتيجة رقم 16 بدون إستعمال أي أرقام MAX_SAFE_INTEGER بسطر واحد فقط إستخدم 
+
+// بس انا عاملتها من غير اللينث فا لو عدتهم هيطلعو 16 رقم فا هو دا الى احنا عايزينو
+
+console.log(`${Number.MAX_SAFE_INTEGER}`.length); // 16
+
+console.log(`${Number.MAX_SAFE_INTEGER}`); // 9007199254740991 
+
+console.log((Number.MAX_SAFE_INTEGER).toString().length); // 16 طريقة تانية
+
+// console.log(Number.MAX_SAFE_INTEGER.length); // بس لو عملت كدة هيطلع ايرور عشان كدة انا عاملت فى سما كولم
+
+
+
+let myVar = "100.56789 Views";
+
+console.log(parseInt(myVar)); // 100
+console.log(Number(parseFloat(myVar).toFixed(2))) ; // 100.57
+
+
+
+let num = 10;
+
+console.log(Number.isInteger(num)); // true so meaning 1 
+
+console.log(+Number.isInteger(num) + +Number.isInteger(num)); // 2
+
+console.log(Number.isInteger(num) + Number.isInteger(num)); // وممكن من غير الزائد
+
+
+let flt = 10.4;
+
+console.log(Math.round(flt)); // 10
+console.log(Math.floor(flt)); // 10
+console.log(Math.trunc(flt)); // 10
+console.log(parseInt(flt)); // 10
+console.log(flt.toFixed(0)); // 10
+
+
+// قم بكتابة كود يطبع رقم عشوائي مابين الصفر ورقم 4
+
+console.log((Math.random() * 4) + 0); // 0 || 1 || 2 || 3 || 4 // 2.2748563390265986 
+
+console.log(Math.floor((Math.random() * 4)) + 0); // 0 || 1 || 2 || 3 || 4
+
+// تعال نجرب حاجة اهو تانى 
+
+console.log((Math.random() * 10) + 1); //  1 || 2 || 3 || 4 to 10  // 7.321666346051005
+
+console.log(Math.trunc((Math.random() * 10)) + 1); //  1 || 2 || 3 || 4 to 10  too
+
+ </script>
+</body>
+</html>

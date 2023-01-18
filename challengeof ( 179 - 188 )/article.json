@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "title": "Title1",
+        "description": "Article Number 1 description",
+        "category": "HTML",
+        "author": "Ali"
+    },
+    {
+        "id": 2,
+        "title": "Title2",
+        "description": "Article Number 2 description",
+        "category": "CSS",
+        "author": "Mahmoud"
+    },
+    {
+        "id": 3,
+        "title": "Title3",
+        "description": "Article Number 3 description",
+        "category": "JS",
+        "author": "Osama"
+    },
+    {
+        "id": 4,
+        "title": "Title4",
+        "description": "Article Number 4 description",
+        "category": "Bootstrap",
+        "author": "Sayed"
+    },
+    {
+        "id": 5,
+        "title": "Title5",
+        "description": "Article Number 5 description",
+        "category": "Sass",
+        "author": "Ahmed"
+    }
+]

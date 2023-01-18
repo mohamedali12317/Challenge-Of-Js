@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+ <script>
+  /*
+    Higher Order Function Challenges
+
+    You Can Use 
+    - ,
+    - _
+    - Space
+    - True => One Time Only In The Code
+
+    You Cannot Use 
+    - Numbers
+    - Letters
+
+    - You Must Use [Filter + Map + Reduce + Your Knowledge]
+    - Order Is Not Important
+    - All In One Chain
+
+*/
+
+let myString = "1,2,3,EE,l,z,e,r,o,_,W,e,b,_S,c,h,o,o,l,2,0,Z";
+
+let mySolution = myString.split("").filter(function(ele){
+    return ele !== ",";
+}).map(function(ele){
+    return isNaN(parseInt(ele)) ? ele : "";
+}).reduce(function(acc, current){
+    return acc + current;
+}).slice(true, -isNaN(myString)).replaceAll("_", " ");
+
+console.log(mySolution); // Elzero Web School
+
+
+// or
+
+// لو تاخد بالك انا فى الماب بقول تعمل ابة فى الترو وتعمل اية فى الفولت 
+
+// اما فى الفلتر مش لزم 
+
+
+let mySolution2 = myString.split("").map(function(ele){
+    return ele !== "," ? ele : "";
+}).filter(function(ele){
+    return isNaN(parseInt(ele));
+}).reduce(function(acc, current){
+    return acc + current;
+}).slice(true, -isNaN(myString)).replaceAll("_", " ");
+
+console.log(mySolution2); // Elzero Web School
+
+
+// بس الميزة الجديدة 
+
+// .replaceAll("_", " ") => دى بتحول انا قولتها حوليها لمسافة 
+
+// .slice(true, -isNaN(myString)) شرح دى 
+
+// slice(1, -1) شارح فى درس 28 
+// z بقلو من 1 الى الاخر معدا اخر واحدة الى هى 
+
+
+//  -isNaN(myString) دى معانها 
+
+// دى معانها -1 صح عشان بقلو دا مش رقم فا ترو فا معانها -1 
+ </script>
+</body>
+</html>

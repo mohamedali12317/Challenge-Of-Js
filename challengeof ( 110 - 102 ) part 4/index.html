@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+
+ <div>10</div>
+
+ <script>
+
+
+let div = document.querySelector("div");
+
+function countdown(){
+    div.innerHTML -= 1;
+    if(div.innerHTML === "0"){
+        location.href = "https://www.facebook.com/Mohamedali12317/";
+        // location.href = "https://www.linkedin.com/in/mohamed-ali-a7036424a/";
+        window.open("https://www.linkedin.com/in/mohamed-ali-a7036424a/", `_blank`, `width = 600 , height = 600 , top = 100 , left = 200`);
+    }
+
+}
+
+let counter = setInterval(countdown, 1000);
+
+ </script>
+</body>
+</html>

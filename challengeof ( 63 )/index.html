@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+ <script>
+  /*
+    Function - Random Argument Challenge
+    ====================================
+    Create Function showDetails
+    Function Accept 3 Parameters [a, b, c]
+    Data Types For Info Is
+    - String => Name
+    - Number => Age
+    - Boolean => Status
+    Argument Is Random
+    Dara Is Not Sorted Output Depend On Data Types
+    - Use Ternary Conditional Operator
+*/
+
+function showDetails(a, b, c){
+    let name;
+    let age;
+    let status;
+//     if(typeof a === "string"){
+//         name = a;
+//     }else if(typeof a === "number"){
+//         age = a;
+//     }else{
+//         status = a;
+//     }
+
+//     if(typeof b === "string"){
+//         name = b;
+//     }else if(typeof b === "number"){
+//         age = b;
+//     }else{
+//         status = b;
+//     }
+
+//     if(typeof c === "string"){
+//         name = c;
+//     }else if(typeof c === "number"){
+//         age = c;
+//     }else{
+//         status = c;
+//     }
+
+//     if(status === true){
+//         status = "You Are Available For Hire";
+//     }else{
+//         status = "You Are Not Available For Hire"
+//     }
+
+//     document.write(`<p>"Hello ${name}, Your Age Is ${age}, ${status}"</p>`)
+
+// فا هى دى خاصية التارنىUse Ternary Conditional Operator هو قال استخدم خاصية 
+
+// انا عاملتها بقاء حالة ايف وبعدها حولتها لدى 
+
+// بس ياسيدى لو تفتكر الامتحان دوت هو عايز يكتب اى نتيجة من دول بس بطريقة عشوائى زاى ما انت شايف تحت
+
+// so i told it if a === "string" make name = a and if typeof a === "number" make  age = a 
+
+// و بس بقاء للاهم دى ولو مفيش حاجة من دول فا دى بتساوى الاستاتث 
+
+// عشان كدة قولت لو الاستاتث بتساوى ترو قول كذا ولو مش بتساوى ترو قول حاجة تانية
+
+typeof a === "string" ? name = a : typeof a === "number" ? age = a : status = a;
+typeof b === "string" ? name = b : typeof b === "number" ? age = b : status = b;
+typeof c === "string" ? name = c : typeof c === "number" ? age = c : status = c;
+status === true ? status = "You Are Available For Hire" : status = "You Are Not Available For Hire";
+document.write(`<p>"Hello ${name}, Your Age Is ${age}, ${status}"</p>`);
+}
+
+
+
+showDetails("Osama", 38, true); // "Hello Osama, Your Age Is 38, You Are Available For Hire"
+showDetails(38, "Osama", true); // "Hello Osama, Your Age Is 38, You Are Available For Hire"
+showDetails(true, 38, "Osama"); // "Hello Osama, Your Age Is 38, You Are Available For Hire"
+showDetails(false, "Osama", 38); // "Hello Osama, Your Age Is 38, You Are Not Available For Hire"
+
+
+// طريقة حل بالوب 
+
+function showDatails(a, b, c) {
+  let datails = [a, b, c];
+  for (let i = 0; i < datails.length; i++) {
+    if (typeof datails[i] === "string") {
+      a = datails[i];
+    } else if (typeof datails[i] === "number") {
+      b = datails[i];
+    } else if (datails[i] === true) {
+      c = "available";
+    } else if (datails[i] === false) {
+      c = "not available";
+    }
+  }
+  console.log(`  Hello ${a} your age is ${b} you are ${c}`);
+}
+
+showDatails("osama", 22, true);
+showDatails(22, true, "osama");
+showDatails(22, "osama", true);
+showDatails("osama", 22, false);
+  // Hello osama your age is 22 you are available
+  // Hello osama your age is 22 you are available
+  // Hello osama your age is 22 you are available
+  // Hello osama your age is 22 you are not available
+
+ </script>
+</body>
+</html>

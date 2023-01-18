@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+ <script>
+ let friends = ["Ahmed", "Sayed", "Ali", 1, 2, "Mahmoud", "Amany"];
+let index = 0;
+let counter = 0;
+
+/*
+انا مش عايز اى حرف الاء و لا الارقام
+
+ عشان هيهنج الجهازindex++; لزم احظ جواه الايف 
+
+ ولزم احطها برضو تحت عشان لو محطتش هتهنج الجهاز 
+
+
+ التركة التانية هو مش عايز تعديل بالارقام هو عايز يبداء برقم 1 فا مدى الكونتر بصفر 
+
+ اعمل اية عشان اخالى يبداء برقم 1 
+
+هيبدا بصفر وبعدها 1 فا لا غلطcounter++ لو عملت كدة 
+
+++counter لزم احط الزائد قبلها فاكدة هيبداء بواحد
+
+ولو تلاحظ هو عايزهم جواه الدابل كود
+
+*/ 
+
+while(index < friends.length){
+    if(typeof friends[index] === "number" || friends[index].startsWith("A")){
+        index++;
+        continue;
+    }
+    document.write(`<p>"${++counter} => ${friends[index]}"</p>`);
+    index++;
+
+} /* "1 => Sayed" 
+
+     "2 => Mahmoud"
+*/
+
+ </script>
+</body>
+</html>

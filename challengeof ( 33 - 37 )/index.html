@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+ <script>
+
+  let num = 50; // change the numers to see its working the first make it 9 or a little and then make it 99 or 50 
+
+  if (num < 10 ) {
+   console.log(`00${num}`);
+   console.log(`${"00"}${num}`); // or like that
+  }else if (num > 10 && num < 100){   
+    console.log(`0${num}`);
+  }else{
+   
+   console.log(`${num}`);
+  } // 050
+
+
+  console.log("=====================================");
+
+let num10 = 9;
+let str = "9";
+let str2 = "20";
+
+// السطر الأول إذا كانت قيمة المتغير الأول هي نفس قيمة المتغير الثانير
+
+if (num10 == str){
+    console.log("{num1} Is The Same Value As {str}");
+} // {num1} Is The Same Value As {str}
+
+// السطر الثاني إذا كانت قيمة المتغير الأول هي نفس قيمة المتغير الثاني ولكن النوع مختلف
+
+if (num10 !== str){
+    console.log("{num1} Is The Same Value As {str} But Not The Same Type");
+} 	// console.log("{num1} Is The Same Value As {str} But Not The Same Type");
+
+// السطر الثالث إذا كانت قيمة المتغير الأول ليست نفس قيمة المتغير الثالث وليست ايضا نفس النوع
+
+if (num10 !== str2){
+    console.log("{num1} Is Not The Same Value Or The Same Type As {str2}"); 
+}
+
+// السطر الرابع إذا كانت قيمة المتغير الثاني لا تساوي المتغير الثالث ولكنهم نفس النوع
+
+if (str != str2){
+    console.log("{str} Is The Same Type As {str2} But Not The Same Value");
+}
+
+// يجب فحص نوع البيانات والقيمة بنفسك لأن البيانات يمكن ان يتغير نوعها وقيمته
+
+if (typeof str === typeof str2){
+    console.log("{str} Is The Same Type As {str2} But Not The Same Value , its working to with typeof"); // or like that
+}
+
+console.log("=====================================");
+
+let num7 = 10;
+let num8 = 30;
+let num9 = "30";
+
+// السطر الأول تأكد أن المتغير الثالث أكبر من الأول ولا يساوي الثاني في النوع
+
+// السطر الثاني تأكد أن المتغير الثالث أكبر من الأول ومساوي للثاني في القيمة ولا يساوي الثاني في النوع
+
+// السطر الثالث تأكد أن قيمة المتغير الثالث لا تساوي الأول من ناحية القيمة والنوع ولا تساوي الثاني من ناحية النوع
+
+// السطر الثالث تأكد أن قيمة المتغير الثالث لا تساوي الأول من ناحية القيمة والنوع ولا تساوي الثاني من ناحية النوع
+
+if ((num9 > num7 && num9 !== num8) && (num9 > num7 && num9 == num8 && num9 !== num8) && (num9 !== num7 && num9 !== num8)){
+    console.log("30 Is Larger Than 10 And Type string Not The Same Type As number" +
+    "\n" + "30 Is Larger Than 10 And Value Is The Same As 30 And Type string Not The Same Type As number" +
+    "\n" +"{num3} Value And Type Is Not The Same As {num1} And Type Is Not The Same As {num2}")
+}
+
+console.log("=====================================");
+
+
+// Edit What You Want Here
+
+let num1 = 10;
+let num2 = 5;
+let num3 = 10;
+let num4 = 36;
+
+/*
+Do Not Edit Below This Line
+Needed Output
+True 7 Times
+
+قم بتغيير محتوى المتغيرات لما هو مناسب لتكون جميع نتائج الكونديشن لترو قم بتغيير محتوى المتغيرات لما هو مناسب لتكون جميع نتائج ال If Condition  
+ If Condition
+
+ let num1 = 10;
+let num2 = 10;
+let num3 = "10";
+let num4 = 20;
+
+
+  Do Not Edit Below This Line
+  Needed Output
+  True 7 Times
+
+
+// Condition 1
+
+if (num1 > num2) {
+  console.log("True");
+} else {
+  console.log("False");
+}
+
+// Condition 2
+
+if (num1 > num2 && num1 < num4) {
+  console.log("True");
+} else {
+  console.log("False");
+}
+
+// Condition 3
+
+if (num1 > num2 && num1 === num3) {
+  console.log("True");
+} else {
+  console.log("False");
+}
+
+// Condition 4
+
+if ((num1 + num2) < num4) {
+  console.log("True");
+} else {
+  console.log("False");
+}
+
+// Condition 5
+
+if ((num1 + num3) < num4) {
+  console.log("True");
+} else {
+  console.log("False");
+}
+
+// Condition 6
+
+if ((num1 + num2 + num3) < num4) {
+  console.log("True");
+} else {
+  console.log("False");
+}
+
+// Condition 7
+
+if (num4 - (num1 + num3) + num2 === 21) {
+  console.log("True");
+} else {
+  console.log("False");
+}
+ 
+*/
+
+// Condition 1
+
+if (num1 > num2) {
+    console.log("True");
+} else {
+    console.log("False");
+}
+
+// Condition 2
+
+if (num1 > num2 && num1 < num4) {
+    console.log("True");
+} else {
+    console.log("False");
+}
+
+// Condition 3
+
+if (num1 > num2 && num1 === num3) {
+    console.log("True");
+} else {
+    console.log("False");
+}
+
+// Condition 4
+
+if ((num1 + num2) < num4) {
+    console.log("True");
+} else {
+    console.log("False");
+}
+
+// Condition 5
+
+if ((num1 + num3) < num4) {
+    console.log("True");
+} else {
+    console.log("False");
+}
+
+// Condition 6
+
+if ((num1 + num2 + num3) < num4) {
+    console.log("True");
+} else {
+    console.log("False");
+}
+
+// Condition 7
+
+if (num4 - (num1 + num3) + num2 === 21) {
+    console.log("True");
+} else {
+    console.log("False");
+}
+
+ </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>( 110 - 102 )</title>
+</head>
+<body>
+ <script>
+
+  let promptMsg = prompt("Print Number From – To", "Example: 5-20");
+  
+let prompNum = promptMsg.split("-").sort((a, b) => a - b);
+
+for(let i = +prompNum[0]; i <= prompNum[1]; i++){
+    let num = document.createElement("div");
+    num.textContent = i;
+    document.body.append(num);
+}
+ </script>
+</body>
+</html>

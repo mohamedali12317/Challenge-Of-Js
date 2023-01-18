@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+ <script>
+  /* 
+    Function Arrow Challenge
+*/
+
+// [1] One Statment In Function
+// [2] Convert To Arrow Function
+// [3] Print The Output [Argument May Change]
+
+// let names = function (...fullNames){
+//     // Parammeter ?
+//     return `String [${fullNames.join("], [")}] => Done !`;
+// }
+
+let names = (...fullNames) => `String [${fullNames.join("], [")}] => Done !`;
+    // Parammeter ? this with  Arrow Function
+
+console.log(names("Osama", "Mohamed", "Ali", "Ibrahim"));
+
+// String [Osama], [Mohamed], [Ali], [Ibrahim] => Done !
+
+/* ===============================================*/
+
+// [1] Replace ??? In Return Statment To Get The Output
+// [2] Create The Name Function With Regular Syntax
+// [3] Use Array Inside The Arguments To Get The Output
+
+let myNumbers = [20, 50, 10, 60];
+
+// انا عايز المعدلة تتطلع 0 
+// i want to take only 10 how i have made nums array becouse of nums [] so i made it array and then i want only ten to bring it it have to be inside 0 [0]
+// so i said  nums[+(!Array.isArray(myNumbers))] i say is that numer tre but dont forget i made it ! so it will be false and false = 0
+// so 20 + 50 + 10 = 80
+
+let calc2 = (one, two, ...nums) => nums[+(!Array.isArray(myNumbers))] + one + two;  // this with  Arrow Function
+
+let calc = function(one, two, ...nums){
+    return nums[+(!Array.isArray(myNumbers))] + one + two;
+} 
+
+console.log(calc(20, 50, 10, 60)); //80
+
+// انا بقلو هات النامث بس 
+let calc3 = (one, two, ...nums) => nums;
+
+console.log(calc3(20, 50, 10, 60)); //10 , 60
+
+ </script>
+</body>
+</html>

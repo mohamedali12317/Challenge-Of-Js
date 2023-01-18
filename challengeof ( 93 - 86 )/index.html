@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+
+   <form action="">
+        <input type="number" name="elements" class="input" placeholder="Number Of Elements" />
+        <input type="text" name="texts" class="input" placeholder="Elements Text" />
+
+        <select name="type" class="input">
+           <option value="Div">Div</option>
+           <option value="Section">Section</option>
+        </select>
+
+        <input type="submit" name="create" value="Create" />
+
+        <div class="results"></div>
+ </form>
+ 
+ <script>
+  let elNum = document.getElementsByName("elements")[0]; // this for number 
+form = document.forms;
+type = document.querySelector("select");
+text = document.getElementsByName("texts")[0];  // this for text 
+results = document.querySelector(".results");  // this for div
+
+// الشرح تحت
+
+form[0].onsubmit = function(el){
+    el.preventDefault();
+    document.querySelectorAll(".box").forEach(el => el.remove());
+
+    for(let i = 1; i <= elNum.value; i++){
+        let myEl = document.createElement(type.value);
+        let myText = document.createTextNode(text.value);
+
+        myEl.className = "box";
+        myEl.title = "Element";
+        myEl.id = `id-${i}`;
+
+        myEl.style.display = "inline-block";
+        myEl.style.width = "200px";
+        myEl.style.margin = "20px";
+        myEl.style.padding = "10px";
+        myEl.style.color = "white";
+        myEl.style.backgroundColor = "red";
+        myEl.style.textAlign = "center";
+        myEl.style.borderRadius = ".5rem";
+
+        myEl.appendChild(myText);
+        results.appendChild(myEl);
+    }
+};
+
+/*
+عايز افكر نفسى بحاجة عشان كل مرة انسى ان اما بعمل كويرى سلكتور اول دى عشان لو عندى كذا ايلمينت مش ايلمنت واحد بس
+فاهيجبلى كلو انا شرحو فى درس 86
+
+اما لو عملت كويرى سلكتور بس من غير الاول فا هيجبلى اول حدة بس 
+*/ 
+
+let input = document.querySelectorAll(".input");
+submit = document.querySelector("[type= 'submit']");
+box = document.querySelectorAll(".box");
+
+for(let i = 0; i < input.length; i++){
+    input[i].style.display = "block";
+    input[i].style.boxSizing = "border-box";
+    input[i].style.width = "250px";
+    input[i].style.padding = "10px";
+    input[i].style.margin = "15px auto";
+    input[i].style.borderRadius = ".5rem";
+    input[i].style.border = "1px solid black";
+}
+
+submit.style.backgroundColor = "gray";
+submit.style.display = "block";
+submit.style.width = "250px";
+submit.style.padding = "10px";
+submit.style.borderRadius = ".5rem";
+submit.style.border = "none";
+submit.style.margin = "15px auto";
+submit.style.color = "white";
+
+// الشرح
+
+/*
+
+form[0].onsubmit = function(el){
+    el.preventDefault(); دى بتمنع ان البينات تتبعات فوق  عشان انت اما بتعمل ساميت كلو هيختفى عشان يتبعت
+                         انا بقاء سبتو موجود فى الصفحة 
+
+    document.querySelectorAll(".box").forEach(el => el.remove()); => 
+     دى انا بقلو اول لما نعمل كريت لاى حاجة امسح القديم ونزل الجديد 
+     لو هتلاحظ انا بقلو يمسج ديف لسة اهو مش موجود بس انا هعملو من هنا
+
+
+
+     // elNum.length ومقلناش  elNum.value احنا لية قولنا 
+     عشان الانبوت نمبر مش تاكست فا انا اكيد هكتب رقم وانا بقلو الفليو فا كدة انا حددتلو انا عايز كام ديف او كام سكشن
+
+    let i = 1; i <= elNum.value; = فى دى بقاء انا بقلو اصغر من او يساوى و فى نفس الوقت قلتلو يبداء من 1 مش من صفر
+
+    
+    for(let i = 1; i <= elNum.value; i++){
+        let myEl = document.createElement(type.value); 
+
+        let myEl = document.createElement(type.value); => لو هتبس على التيب دى الى هى بتاعت السلكت تمام
+        انا بختار من السلكت سواء ديف او سكشن حلو فا انا بقلو حط الفليو الى هو مثلا ديف
+        ولو تاخد بالك انا بقلو كريت ايلمنت ديف بس كدة انت كدة لاقت هو كريت ديف 
+
+
+        let myText = document.createTextNode(text.value);
+
+        let myText = document.createTextNode(text.value); فى دى بقلو حط الكلام الى انا بكتبو فى الانبوت بتاع
+        التاكست
+
+        myEl.className = "box";
+        myEl.title = "Element";
+        myEl.id = `id-${i}`; دى هنرقم الاى دى 
+
+        myEl.style.display = "inline-block";
+        myEl.style.width = "200px";
+        myEl.style.margin = "20px";
+        myEl.style.padding = "10px";
+        myEl.style.color = "white";
+        myEl.style.backgroundColor = "red";
+        myEl.style.textAlign = "center";
+        myEl.style.borderRadius = ".5rem";
+
+        myEl.appendChild(myText);
+        results.appendChild(myEl); بنقلو هنحطو فى الديف
+    }
+};
+
+*/ 
+ </script>
+</body>
+</html>

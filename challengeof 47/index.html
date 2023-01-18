@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+ <script>
+  let zero = 0;
+let counter = 3;
+let my = ["Ahmed", "Mazero", "Elham", "Osama", "Gamal", "Ameer"];
+
+
+// اول طلاب المفروض اجيب من اول اسم اسامة لحد اسم احمد 
+
+// فا عندك حلين 
+
+// اول حل 
+
+// فا لزم اشقلب الكلام حلو هو لو هتلاحظ عامل الكونتر رقم 3 
+
+// ['Ameer', 'Gamal', 'Osama', 'Elham', 'Mazero', 'Ahmed'] بس احنا اما شقلبنا الكلام بقاء كدة 
+
+// فا شوف بس كدة هتلاحظ ان اسم اسامة بقاء رقم 2 فا مفيش غير حلين 
+
+// اول حل ان انا احط اى اسم عشان اخالى اسم اسامة يكون رقم 3 
+
+// my.slice(counter) فا احنا عاملنا بوش مصطفى بقاء بقاء كدة اسامة رقم 3 نقوم نعمل بعدها 
+
+// فا خد اسامة لحد الى بعدة كلة لحد احمد
+
+// my2 = my.slice(--counter); الحل التانى منحطش بوش دى ونعمل 
+
+// كدة انا بقلو خاليها رقم 2 نزلنا واحد ولو جيت تعد وهو متشقلب هتلقى اسامة رقم 2
+
+my.push("Mostafa"); //  ['Mostafa', 'Ameer', 'Gamal', 'Osama', 'Elham', 'Mazero', 'Ahmed']
+
+my = my.reverse();  // شقلبنا الكلام 
+
+console.log(my); //  ['Mostafa', 'Ameer', 'Gamal', 'Osama', 'Elham', 'Mazero', 'Ahmed']
+
+my = my.slice(counter);
+console.log(my); // ["Osama", "Elham", "Mazero", "Ahmed"];
+
+
+// هو عايز ياخد الاسمين دول 
+
+// انا بقلو -3 فا بداء بالهام 
+
+// وبعدها قلتلو 3 ولو تفتكر هو نوت انكلودنج يعنى اما اقلو 3 هياخد لحد 2
+
+console.log(my.slice(-counter, counter)); // ["Elham", "Mazero"]
+
+my = my.slice(-counter, counter);
+
+//"Elham", "Mazero" عايز اعمل اسم الزيرو هاخد الحروف من الاسمين الى الموجدين دول 
+
+console.log(`${my[0].slice(0,2)}${my[1].slice(-4)}`); // Elzero
+
+console.log(`${my[0].slice(0,2)}${my[1].slice(2)}`); // Elzero or like that 
+
+console.log(`${my[zero].slice(zero, (my[zero].indexOf("h")))}${my[my[zero].indexOf("l")].slice((my[zero].indexOf("h")))}`); // Elzero دى محتاجة شرح 
+
+// شرح الكود الى فوق 
+
+// slice(zero, (my[zero].indexOf("h")) =يعنى 2 h بس دى بقلو اول اندكس الى هو الهام فا بقلو دوت ااندكس اوف الهام حرف 
+
+// فى غلطة عملتها ان انا نسيت احط جواه الاندكس اوف الدبل كود 
+
+// my[my[zero].indexOf("l")] = انا بقلو الماى بس على الى فوقيها عشان تفهم اكتر 
+
+// عشان اجيب رقم 1l فا انا هكتب جواه الماى ومعاها الاندكس صفر ومعاها الاندكس اوف حرف 
+
+
+
+// ro  عايز اعمل حروف 
+
+console.log(`${my[1][4]}`); // r
+
+console.log(`${my[1][4]}${my[1][5].toUpperCase()}`); // rO
+
+console.log(`${my[zero + my[zero].indexOf("l")][counter + my[zero].indexOf("l")]}${my[my[zero].indexOf("l")][counter + my[zero].indexOf("h")].toUpperCase()}`); // rO = [zero + my[zero].indexOf("l")] على فكرة
+
+// وانا بقول صفر + اى رقم = الرقم نفسة فا ملوش لزمة يعنى بس حطو عشان لو لقيت حد عاملو متخضش
+
+// [counter + my[zero].indexOf("l")] = انا كدة بقلو 3+ 1
+
+
+console.log(`${my[zero].slice(zero, (counter - my[zero].indexOf("l")))}${my[zero + (my[zero].indexOf("l"))].slice((counter - my[zero].indexOf("l")))}`); // "Elzero"
+
+console.log(my);
+
+console.log(`${my[zero + my[zero].indexOf("l")].charAt(counter + my[zero].indexOf("l"))}${my[zero + my[zero].indexOf("l")].charAt(counter + my[zero].indexOf("h")).toUpperCase()}`); // "rO"
+ </script>
+</body>
+</html>

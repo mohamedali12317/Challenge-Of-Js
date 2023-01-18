@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+ <script>
+
+ let dateOne = new Date();
+let birthDate = new Date("Aug 26 1997");
+// let birthDate = new Date("7 25 1998");
+// let birthDate = new Date("2 20 1961");
+let dateDiff = dateOne - birthDate;
+
+console.log(`${(dateDiff / 1000).toFixed()} Seconds`);
+console.log(`${(dateDiff / 1000 / 60).toFixed()} Minutes`);
+console.log(`${(dateDiff / 1000 / 60 / 60).toFixed()} Hours`);
+console.log(`${(dateDiff / 1000 / 60 / 60 / 24).toFixed()} Days`);
+console.log(`${(dateDiff / 1000 / 60 / 60 / 24 / 365).toFixed()} Years`); // 25 Years
+
+console.log("=".repeat(55));
+"========================================================================================"
+
+let dateTwo = new Date();
+dateTwo.setTime(0); //  انا عاملو صفر يعنى اكن مفيش وقت عدى اصلا من سنة 1970
+dateTwo.setFullYear(1980);
+dateTwo.setHours(0);
+dateTwo.setSeconds(1);
+
+console.log(dateTwo);
+
+console.log("=".repeat(55)); // Tue Jan 01 1980 00:00:01 GMT+0200 (Eastern European Standard Time)
+"========================================================================================"
+let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+let dateThree = new Date();
+
+dateThree.setDate(0); // دا بيجيب اخر يوم فى الشهر الى فات
+
+console.log(dateThree);
+console.log(`"Previous Month Is ${months[dateThree.getMonth()]} And Last Day Is ${dateThree.getDate()}"`);
+
+console.log(`"Previous Month Is ${dateThree.getMonth()} And Last Day Is ${dateThree.getDate()}"`);// لزم يبق شهر 12 مش 11 بس عشان بيبداء بصفر بتاع الاندكس
+                // فا عشان كدة عملنا حوار الشهر الى فى الكونسول الى فوق 
+
+console.log("=".repeat(55));
+"========================================================================================"
+
+let birthOne = new Date("1997 08 26");
+console.log(birthOne); // Tue Aug 26 1997 00:00:00 GMT+0300 (Eastern European Summer Time)
+let birthTwo = new Date("08/26/1997");
+console.log(birthTwo); // Tue Aug 26 1997 00:00:00 GMT+0300 (Eastern European Summer Time)
+let birthThree = new Date("08-26-1997");
+console.log(birthThree); // Tue Aug 26 1997 00:00:00 GMT+0300 (Eastern European Summer Time)
+
+console.log("=".repeat(55));
+"========================================================================================"
+
+// let start = performance.now();
+
+// for(let i = 0; i < 100000; i++){
+//     document.write(`<div>${i}</div>`)
+// }
+
+// let end = performance.now();
+
+// let duration = end - start;
+
+// console.log(`"Loop Took ${Math.trunc(duration)} Milliseconds."`);
+
+console.log("=".repeat(55));
+"========================================================================================"
+
+// Write Your Generator Function Here
+
+// function* gen(){
+//     let index = 14;
+//     let num = 140;
+//     let sum = index + num;
+//     while(true){
+//         yield sum;
+//         sum += num += 200;
+//     }
+// }
+
+// let generator = gen();
+
+// console.log(generator.next()); // {value: 14, done: false}
+// console.log(generator.next()); // {value: 154, done: false}
+// console.log(generator.next()); // {value: 494, done: false}
+// console.log(generator.next()); // {value: 1034, done: false}
+// console.log(generator.next()); // {value: 1774, done: false}
+// console.log(generator.next()); // {value: 2714, done: false}
+// console.log(generator.next()); // {value: 3854, done: false}
+// console.log(generator.next()); // {value: 5194, done: false}
+// console.log(generator.next()); // {value: 6734, done: false}
+
+console.log("=".repeat(55));
+"========================================================================================"
+
+function* genNumbers() {
+    yield* [1, 2, 2, 2, 3, 4, 5];
+}
+function* genLetters() {
+    yield* ["A", "B", "B", "B", "C", "D"];
+}
+
+// Write Your Generator Function Here
+function* genAll(){
+    yield* new Set(genNumbers());
+    yield* new Set(genLetters());
+} // انا جبت كلو اهو وشلت الارقام و الحروف المتككررة
+
+let generator = genAll();
+
+console.log(generator.next()); // {value: 1, done: false}
+console.log(generator.next()); // {value: 2, done: false}
+console.log(generator.next()); // {value: 3, done: false}
+console.log(generator.next()); // {value: 4, done: false}
+console.log(generator.next()); // {value: 5, done: false}
+console.log(generator.next()); // {value: "A", done: false}
+console.log(generator.next()); // {value: "B", done: false}
+console.log(generator.next()); // {value: "C", done: false}
+console.log(generator.next()); // {value: "D", done: false}
+
+// هتفضل فولث الى ما لانهاية عشان انا عامل الى مالانهاية
+
+console.log("=".repeat(55));
+"========================================================================================"
+// import  calc from "./mod-one.js";
+// import * as modOne from "./mod-two.js";
+// console.log(calc(modOne.numOne, modOne.numTwo, modOne.numThree)); // 60
+
+// calc دى بتاعت اول وحدة بتاعت الفانكشن الى انا عاملتو
+
+// modOne = وهكذا numOne و كنت مسمى الفريبول modOne دى بتاعت تانى واحد بتاع الملف التانى فا انا مسمى 
+ </script>
+
+<script src="main.js" type="module" ></script>  <!--  كان كل شوية يطلع ايرور عشان محططتش المديول-->
+<script src="mod-one.js" type="module"></script>
+<script src="mod-two.js" type="module"></script>
+
+</body>
+</html>

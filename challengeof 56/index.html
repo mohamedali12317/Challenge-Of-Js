@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+ <script>
+
+  // الشرح تحت
+
+  let myAdmins = ["Ahmed", "Osama", "Sayed", "Stop", "Samera"];
+let myEmplowees = ["Amged", "Sameh", "Ameer", "Omar", "Othman", "Amany", "Samia"];
+let showAdmins = 3;
+
+document.write(`<div>We Have ${showAdmins} Admins</div>`);
+document.write(`<hr>`);
+counterOne = 1;
+counterTwo = 1;
+counterThree = 1;
+
+for(let i = 0; i < myAdmins.length; i++){
+    if(myAdmins[i] === "Stop"){
+        break;
+    }
+
+    document.write(`<div>`);
+     
+    document.write(`The Admin For Team ${i + 1} Is ${myAdmins[i]}`);
+    document.write(`<h3>Team Members</h3>`);
+    for(let j = 0; j < myEmplowees.length; j++){
+        if(myAdmins[i].startsWith("A") && myEmplowees[j].startsWith("A")){
+            document.write(`<p>- ${counterOne++} ${myEmplowees[j]}</p>`);
+        }else if(myAdmins[i].startsWith("O") && myEmplowees[j].startsWith("O")){
+            document.write(`<p>- ${counterTwo++} ${myEmplowees[j]}</p>`);
+        }else if(myAdmins[i].startsWith("S") && myEmplowees[j].startsWith("S")){
+            document.write(`<p>- ${counterThree++} ${myEmplowees[j]}</p>`);
+        }   
+    }
+
+    document.write(`</div>`); // لو تاخد بالك الديف التانى برا اللوب 
+    document.write(`<hr>`);
+}
+
+ document.write(`<br>`);
+ document.write(`<br>`);
+
+document.write(`<div>We Have ${showAdmins} Admins</div>`);
+document.write(`<hr>`);
+counterOne = 1;
+counterTwo = 1;
+counterThree = 1;
+
+for(let i = 0; i < myAdmins.length; i++){
+    if(myAdmins[i] === "Stop"){
+        break;
+    }
+
+    document.write(`<div>`);
+     
+    document.write(`The Admin For Team ${i} Is ${myAdmins[i]}`);
+    document.write(`<h3>Team Members</h3>`);
+   
+    document.write(`</div>`);
+    document.write(`<hr>`);
+}
+
+ document.write(`<br>`);
+ document.write(`<br>`);
+
+
+document.write(`<div>We Have ${showAdmins} Admins</div>`);
+document.write(`<hr>`);
+counterOne = 1;
+counterTwo = 1;
+counterThree = 1;
+
+for(let i = 0; i < myAdmins.length; i++){
+    if(myAdmins[i] === "Stop"){
+        break;
+    }
+
+    document.write(`<div>`);
+     
+    document.write(`The Admin For Team ${i} Is ${myAdmins[i]}`);
+    document.write(`<h3>Team Members</h3>`);
+    for(let j = 0; j < myEmplowees.length; j++){
+        if(myAdmins[i].startsWith("A") && myEmplowees[j].startsWith("A")){
+            document.write(`<p>- ${counterOne++} ${myEmplowees[j]}</p>`);
+        }else if(myAdmins[i].startsWith("O") && myEmplowees[j].startsWith("O")){
+            document.write(`<p>- ${counterOne++} ${myEmplowees[j]}</p>`);
+        }else if(myAdmins[i].startsWith("S") && myEmplowees[j].startsWith("S")){
+            document.write(`<p>- ${counterOne++} ${myEmplowees[j]}</p>`);
+        }   
+    }
+
+    document.write(`</div>`);
+    document.write(`<hr>`);
+}
+
+ </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+  <div class="our-element">Our Element</div>
+  <p>Paragraph</p>
+ <script>
+
+  /*
+  عايز احذف عنصر البرجراف 
+
+  عايز اعمل دفين ديف قبل عنصر الدف الى موجود وبعدة فى نفس الوقت 
+
+  وعشان تفهم الاكواد بتقول اية هشرج اول سطر بس 
+
+    el.className = ind.toLowerCase();
+
+  */ 
+
+let p = document.getElementsByTagName("p")[0];
+let div = document.querySelector(".our-element");
+let startDiv = div.cloneNode();
+let endDiv = div.cloneNode();
+let span = document.createElement("span");
+let spanclone = span.cloneNode();
+document.body.appendChild(span);
+document.body.appendChild(spanclone);
+
+
+// remove paragraph
+p.remove();
+
+function addAttr (el, ind){
+    el.className = ind.toLowerCase();
+    el.title = `${ind} element`;
+    el.setAttribute("data-value", ind);
+    el.textContent = ind;
+}
+addAttr(startDiv, "Start");
+addAttr(endDiv, "End");
+addAttr(span, "mohamed");
+addAttr(spanclone, "ali");
+
+// add div element
+
+div.before(startDiv);
+div.after(endDiv);
+startDiv.after(span);
+ </script>
+</body>
+</html>

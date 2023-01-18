@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+
+   <a class="open" href="https://google.com">Google</a>
+    <a class="open" href="https://www.youtube.com/@mohamed-Ali-front-end">youtube</a>
+    <a class="not" href="https://www.facebook.com/Mohamedali12317/">Facebook</a>
+    <a class="linked" href="https://www.linkedin.com/in/mohamed-ali-a7036424a/">linkidin</a>
+    
+ <script>
+      window.onload = function(){
+        
+        for (i = 0; i <document.links.length; i++){
+          let link = document.links[i];
+          if (link.classList.contains("open") && link.textContent === "youtube")
+          link.click();
+          console.log(link);         
+        
+          window.open(link, `_blank`, `width = 600 , height = 600 , top = 100 , left = 200`);
+
+        } // for 
+        
+      } // window.onload = function()
+
+ </script>
+</body>
+</html>

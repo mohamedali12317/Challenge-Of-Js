@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+ <script>
+let parent = document.createElement("div");
+let heading = document.createElement("h1");
+let text = document.createElement("p");
+let btn = document.createElement("button");
+
+function popup(){
+    heading.textContent = "Welcome";
+    text.textContent = "Welcome To Alghanem Web Study";
+    btn.textContent = "X";
+
+    parent.append(heading, text, btn);
+    document.body.append(parent);
+
+    btn.addEventListener("click", function(){
+        btn.parentElement.remove(); 
+        // or like that
+        // parent.remove();
+    });
+
+    document.body.style.cssText = "font-family: arial, Tahoma";
+    parent.style.cssText = "background-color: #eee; border: 1px solid #ccc; padding 20px; text-align: center; position: relative; width: 350px; height: 150px; margin: 20px auto;";
+    btn.style.cssText = "background-color: red; color: white; font-weight: bold; border: none; width: 30px; height: 30px; border-radius: 50%; position: absolute; top: -10px; right: -10px"
+
+console.log(btn.parentElement);
+
+}
+
+setTimeout(popup, 3000);
+
+// or 
+
+
+function c (){
+
+  document.body.cssText="display: flex;justify-content: center;align-items: center;"
+
+  let div =document.createElement("div");
+
+  let p1 =document.createElement("p")
+
+  p1.style.cssText="justify-self: center;font-weight:bold;font-size:29px;padding: 42px 156px;background-color: #d45a43;position: relative;bottom: 32px;border-radius:3px "
+
+  p1.innerText="welcome";
+
+  let p2= document.createElement("p");
+
+p2.innerText="hello my name is mohamed"
+
+p2.style.cssText="position: relative;bottom: 32px; color:white;left: 5.6em;background-color: #d45a43;width: 12.3em;padding: 13px 22px;border-radius: 21px;"
+
+  div.appendChild(p1)
+
+  div.appendChild(p2)
+
+  div.style.cssText="width: 420px;height: 270px;margin-top: 10em;display: grid;justify-content: center;align-items: center;background-color: #f5f3f4; margin-left: 33em; color:white;box-shadow: 0px 0px 9px -5px black; border-radius:5px"
+
+  let btn =document.createElement("button");
+
+  btn.innerText="X"
+
+  btn.style.cssText="padding: 7px 11px;border-radius: 50%;border: none;display: grid;position: absolute;left: 70.3em;top: 10.6em;color: white;background-color: white; color:black;border:2px solid rgb(212, 90, 67);box-shadow: -1px 2px 5px -1px;cursor: pointer;"
+  
+btn.addEventListener("click",function(){
+  div.remove()
+})
+  div.appendChild(btn)
+  document.body.appendChild(div);
+}
+
+setTimeout(c, 5000);
+
+ 
+ </script>
+</body>
+</html>

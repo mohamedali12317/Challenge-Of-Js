@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+  <div>Element</div>
+  <span>Element</span>
+  <p>Element</p>
+  <article>Element</article>
+  <section>Element</section>
+
+  <script>
+
+   // بس هو انا عايز اول لما ادوس على الالمنت يقول هو نوعة اية برجراف ولا ديف
+   // فى كذا طريقة 
+
+   [...document.body.children].forEach(
+    el => (el.onclick = _ => console.log(`This is ${el.localName}`))
+); // This is div
+
+// الطريقة دى بتجيب بالكابيتل 
+document.addEventListener("click", (e) =>
+  console.log(`This is ${e.target.nodeName}`)
+); // This is DIV
+
+document.addEventListener("click", (e) =>
+  console.log(`This is ${e.target.localName}`)
+); // This is div
+
+// دا لو انا عايز اجيب الديف كلة بقاء
+document.addEventListener("click", (e) =>
+  console.log(e.target)
+); // <div>Element</div>
+
+  </script>
+</body>
+</html>

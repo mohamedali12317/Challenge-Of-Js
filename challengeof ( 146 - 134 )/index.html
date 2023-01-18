@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+ <script>
+  let ip = "2001:db8:3333:4444:5555:6666:7777:8888";
+
+let ipRe = /(\d+|\D+)+/ig;
+let ipRe2 = /(\d+\D+)+/ig;
+let ipRe3 = /\d+\D+/ig;
+let ipRe4 = /(\d+\D+)/ig;
+let ipRe5 = /\d+/ig;
+let ipRe6 = /\D+/ig;
+let ipRe7 = /\d/ig;
+let ipRe8 = /\D/ig;
+
+console.log(ip.match(ipRe)); //  ['2001:db8:3333:4444:5555:6666:7777:8888'] انا بقلو دى او دى وكمل 
+console.log(ip.match(ipRe2)); // ['2001:db8:3333:4444:5555:6666:7777:'] الامثلة بينا مش محتاج شرح
+console.log(ip.match(ipRe3)); // ['2001:db', '8:', '3333:', '4444:', '5555:', '6666:', '7777:']
+console.log(ip.match(ipRe4)); // ['2001:db', '8:', '3333:', '4444:', '5555:', '6666:', '7777:']
+console.log(ip.match(ipRe5)); // ['2001', '8', '3333', '4444', '5555', '6666', '7777', '8888'] // لو تاخد بالك اما عاملت + جمعتهم مع بعض عكس لو معملتش 
+console.log(ip.match(ipRe6)); // [':db', ':', ':', ':', ':', ':', ':']
+console.log(ip.match(ipRe7)); //(29) ['2', '0', '0', '1', '8', '3', '3', '3', '3', '4', '4', '4', '4', '5', '5', '5', '5', '6', '6', '6', '6', '7', '7', '7',
+                             // '7', '8', '8', '8', '8']
+console.log(ip.match(ipRe8)); // [':', 'd', 'b', ':', ':', ':', ':', ':', ':']
+console.log('*'.repeat(18));
+
+"====================================================================================="
+
+let specialNames = "Os10O OsO Os100O Osa100O Os1000 Os100m";
+
+let specialNamesRe = /\b(Os)\d*O/g; // 
+                                   // os only  مفيش رقم هيجبلك   ['Os10O', 'OsO', 'Os100O']
+
+let specialNamesRe6 = /\Os\d*O/g; // ['Os10O', 'OsO', 'Os100O']
+
+let specialNamesRe2 = /\b(Os)\d*/g; // ['Os10', 'Os', 'Os100', 'Os', 'Os1000', 'Os100']
+
+let specialNamesRe3 = /(Os)\d*/g; //  ['Os10', 'Os', 'Os100', 'Os', 'Os1000', 'Os100']
+
+let specialNamesRe4 = /Os\d*/g; //  ['Os10', 'Os', 'Os100', 'Os', 'Os1000', 'Os100']
+
+ 
+let specialNamesR5 = /Os\d+O/g; // ['Os10O', 'Os100O']
+
+
+console.log(specialNames.match(specialNamesRe));
+console.log(specialNames.match(specialNamesRe2));
+console.log(specialNames.match(specialNamesRe3));
+console.log(specialNames.match(specialNamesRe4));
+console.log(specialNames.match(specialNamesR5));
+console.log(specialNames.match(specialNamesRe6));
+
+console.log('*'.repeat(18));
+
+// Output
+// ['Os10O', 'OsO', 'Os100O']
+
+"====================================================================================="
+
+let phone = "+(995)-123 (4567)";
+
+let phoneRe = /\+\(\d{3}\)-\d{3}\s\(\d{4}\)/g;
+let phoneRe2 = /\+/g;
+let phoneRe3 = /\+\(\d{3}\)/g;
+let phoneRe4 = /\+\(\d{3}\)-\d{3}\s/g;
+
+ //  /\(\)/g; 
+
+// \s دى معانها مسافة 
+console.log(phone.match(phoneRe));
+console.log(phone.match(phoneRe2));
+console.log(phone.match(phoneRe3));
+console.log(phone.match(phoneRe4));
+
+console.log('*'.repeat(18));
+
+
+"====================================================================================="
+
+let url1 = 'elzero.org';
+let url2 = 'http://elzero.org';
+let url3 = 'https://elzero.org';
+let url4 = 'https://www.elzero.org';
+let url5 = 'https://www.elzero.org:8080/articles.php?id=100&cat=topics';
+
+let re = /(https?:\/\/)?([\w]+\.)?([\w]+)\.\w+(\.\w+)?\/?.*/g; // Write Your Pattern Here
+
+console.log(url1.match(re));
+console.log(url2.match(re));
+console.log(url3.match(re));
+console.log(url4.match(re));
+console.log(url5.match(re));
+
+"====================================================================================="
+
+let date1 = "25/10/1982";
+let date2 = "25 - 10 - 1982";
+let date3 = "25 10 1982";
+let date4 = "25 10 82";
+
+let dateRe = /\d{2}\s?-?\s?\/?\d{2}\s?-?\s?\/?\d{2,}/g; // Write Pattern Here
+
+console.log(date1.match(dateRe)); // "25/10/1982"
+console.log(date2.match(dateRe)); // "25 - 10 - 1982"
+console.log(date3.match(dateRe)); // "25 10 1982"
+console.log(date4.match(dateRe)); // "25 10 82"
+
+
+
+
+ </script>
+</body>
+</html>

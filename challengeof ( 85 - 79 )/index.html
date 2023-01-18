@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+ <script>
+  // Create Your Object Here
+
+let member = {
+    name: "Elzero",
+    age: 38,
+    country: "Egypt",
+    fullDetails: function(){
+        return `My Name Is ${member.name}, My Age Is ${member.age}, I Live in ${member.country}`;
+    },
+};
+
+console.log(member.name); // Elzero
+console.log(member.age); // 38
+console.log(member.country); // Egypt
+console.log(member.fullDetails());
+// My Name Is Elzero, My Age Is 38, I Live in Egypt
+
+console.log("=".repeat(40));
+
+// Method One
+// Create Your Object Here
+
+let objMethodOne = {
+    property: "Method One",
+};
+
+console.log(objMethodOne.property); // "Method One"
+
+// Method Two
+// Create Your Object Here
+
+let objMethodTwo = new Object ({
+    property: "Method Two",
+});
+
+console.log(objMethodTwo.property); // "Method Two"
+
+// Method Three
+// Create Your Object Here
+
+let objMethodThree = Object.create({});
+
+objMethodThree.property = "Method Three";
+
+console.log(objMethodThree.property); // "Method Three"
+
+// // Method Four
+// // Create Your Object Here
+
+let objMethodFour = Object.assign({}, {property: "Method Four"});
+
+console.log(objMethodFour.property); // "Method Four"
+
+console.log("=".repeat(40));
+
+// بس فى تركة جديدة عليا 
+
+// جواه الكرلى اما لو هو ابجكيت زاى الباقى عادى من غير الكرلى بريثث{a} الفريبول يوم ما احطو احطو زاى كدة 
+
+let a = 1;
+
+let threeNums = {
+    b: 2,
+    c: 3,
+    d: 4,
+};
+
+let twoNums = {
+    e: 5,
+    f: 6,
+};
+
+// Create Your Object Here in One Line
+
+let finalObject = Object.assign({}, {a}, threeNums, twoNums);
+
+console.log(finalObject);
+
+/*
+a: 1
+b: 2
+c: 3
+d: 4
+e: 5
+f: 6
+*/
+
+console.log("=".repeat(40));
+
+// الشرح تحت
+
+// اهو دا اكتر حاجة تفدنى بدل ما كنت بعمل كذا ديف هعمل ديف واحد بس واحط المعلومات دى فى الاوبجيكت واعمل اللوب
+// زاى مثال البرتفاليو بتاعتى الجزء بتاع المشاريع بتاعتى
+
+// The Object To Work With
+let myFavGames = {
+    "Trinity Universe": {
+        publisher: "NIS America",
+        price: 40,
+    },
+    "Titan Quest": {
+        publisher: "THQ",
+        bestThree: {
+        one: "Immortal Throne",
+        two: "Ragnarök",
+        three: "Atlantis",
+        },
+        price: 50,
+    },
+    YS: {
+        publisher: "Falcom",
+        bestThree: {
+        one: "Oath in Felghana",
+        two: "Ark Of Napishtim",
+        three: "origin",
+        },
+        price: 40,
+    },
+};
+
+// Code One => How To Get Object Length ?
+let objectLength = Object.keys(myFavGames).length;
+
+let game = Object.keys(myFavGames);
+
+console.log(game); // ['Trinity Universe', 'Titan Quest', 'YS']
+
+console.log(objectLength); // 3
+
+for (let i = 0; i < objectLength; i++) {
+    console.log(`The Game Name Is ${game[i]}`);
+    console.log(`The Publisher Is ${myFavGames[game[i]]["publisher"]}`);
+    console.log(`The Price Is ${myFavGames[game[i]]["price"]}`);
+
+// Check If Nested Object Has Property (bestThree)
+    if (Object.hasOwn(myFavGames[game[i]], "bestThree")) {
+        console.log("- Game Has Releases");
+        console.log(`First => ${myFavGames[game[i]]["bestThree"]["one"]}`);
+        console.log(`Second => ${myFavGames[game[i]]["bestThree"]["two"]}`);
+        console.log(`Third => ${myFavGames[game[i]]["bestThree"]["three"]}`);
+    }
+    console.log("#".repeat(20));
+}
+
+// Ouput
+
+"The Game Name Is Trinity Universe"
+"The Publisher Is NIS America"
+"The Price Is 40"
+"####################"
+"The Game Name Is Titan Quest"
+"The Publisher Is THQ"
+"The Price Is 50"
+"- Game Has Releases"
+"First => Immortal Throne"
+"Second => Ragnarök"
+"Third => Atlantis"
+"####################"
+"The Game Name Is YS"
+"The Publisher Is Falcom"
+"The Price Is 40"
+"- Game Has Releases"
+"First => Oath in Felghana"
+"Second => Ark Of Napishtim"
+"Third => origin"
+"####################"
+
+
+// او كدة 
+
+for (let i = 0; i < objectLength; i++) {
+  console.log(`The Game Name Is ${Object.keys(myFavGames)[i]}`);
+  console.log(`The Publisher Is ${myFavGames[Object.keys(myFavGames)[i]].publisher}`);
+  console.log(`The Price Is ${myFavGames[Object.keys(myFavGames)[i]].price}`);
+
+  // Check If Nested Object Has Property (bestThree)
+  if (myFavGames[Object.keys(myFavGames)[i]].bestThree) {
+    console.log("- Game Has Releases");
+    console.log(`First => ${myFavGames[Object.keys(myFavGames)[i]].bestThree.one}`);
+    console.log(`Second => ${myFavGames[Object.keys(myFavGames)[i]].bestThree.two}`);
+    console.log(`Third => ${myFavGames[Object.keys(myFavGames)[i]].bestThree.three}`);
+  }
+  console.log("#".repeat(20));
+}
+
+
+  /*
+  
+   console.log(`The Game Name Is ${game[i]}`); => 
+
+   او كدة
+
+   console.log(`The Game Name Is ${Object.keys(myFavGames)[i]}`); => 
+
+   دا الى هيجبلى التلاتة اوبجيكت الى جواه الاوبجيكت الىهما دول 
+
+   "The Game Name Is Trinity Universe"
+
+   "The Game Name Is Titan Quest"
+
+   "The Game Name Is YS"
+
+
+  */
+
+  /*
+ Object.keys(myFavGames) الى انا فهمتو من دا 
+ myFavGames ان دا بياخد كل اوبجيكت من الاوبجيكت الاب الى هو دا
+  */ 
+
+
+/*
+دى والسعر نفس الحكاية 
+console.log(`The Publisher Is ${myFavGames[Object.keys(myFavGames)[i]].publisher}`);
+
+myFavGames[Object.keys(myFavGames)[i]].publisher انا لية قولت 
+
+فا هيجبلى 3 اوبجيكت الى ورتهملك فى الى فوق انا بقاء عشان اكسس على ابوهم هماmyFavGames عشان دا البابا بتاعهم يلا 
+
+لزم احط اسم الاوبجيكت بتاع البابا يلا البابا الكبير
+
+ .publisher و بعدها بحديد انا عايز اية منهم
+
+ هيجبلى دول 
+
+ "The Publisher Is NIS America"
+
+ "The Publisher Is THQ"
+
+ "The Publisher Is Falcom"
+
+*/ 
+
+
+/*
+والى انا خات بالى منهم ان هما الاتنين واحد 
+
+
+
+Object.hasOwn(myFavGames[game[i]], "bestThree"
+
+myFavGames[Object.keys(myFavGames)[i]].bestThree = ودا افضل حل
+
+لو تاخد بالك انا بكسس على دى
+
+ YS: {
+        publisher: "Falcom",
+        bestThree: { دى 
+        one: "Oath in Felghana",
+        two: "Ark Of Napishtim",
+        three: "origin",
+        },
+        price: 40,
+    },
+
+*/ 
+ </script>
+</body>
+</html>

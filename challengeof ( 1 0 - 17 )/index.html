@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+ <div id="mohamed">look i dont need to make variable for id no</div>
+
+ <script>
+  // الاسئلة بتاعت التكاليف بدل ما افضل اكتب وبرضو هيبق موجود فى نوشن
+
+  // the first one 
+
+  let number_one = 10 ; 
+  let number_two = 20 ; 
+  
+  console.log(number_one+number_two); // 30
+
+  console.log(number_one + "" + number_two); // 1020
+
+  // he wants to do that with Template Literals and this is call Template Literals
+
+  console.log(`${number_one}${number_two}`); // 1020
+
+  // هو عايز يخالى ال20 فوق و ال10 تحت بطريقة الكونتكينات
+
+  console.log(number_two + "\n" + number_one); // 20
+                                               // 10
+
+// he wants me to do the same thing as Template Literals
+
+  console.log(`${number_one}
+${number_two}`); // 20
+                // 10
+
+
+// the second one 
+
+console.log(mohamed.innerHTML); // look i dont need to make variable for id no
+
+console.log(typeof mohamed); // object 
+
+
+//Concatenate في عمل  Template Literals قم بطباعة النتيجة التالية بدون إستخدام طريقة ال
+
+// `I'm In
+// \\
+// Love \\ """ '''
+// ++ With ++
+// \"""\"""
+// ""JavaScript""``
+
+console.log(`\`i'm in
+\\\\
+love \\\\ \"\"\" \'\'\'
+\+\+ with \+\+
+\\\ """\\\ \"\"\"
+\"\"JavaScript\"\"\'`);
+
+// the third one
+
+let a = 21;
+let b = 20;
+
+// with Template Literals
+
+console.log(`_${a}_${b}${a}_${b}${a}_${b}${a}_${b}`); // _21_2021_2021_2021_20
+
+// with Concatenate
+
+console.log("_" + a + "_" + b + "" + a + "_" + b + "" + a + "_" + b + "" + a + "_" + b);
+
+// and i can do that too
+
+c=`${a}${b}_`;
+result=c.repeat(3);
+console.log(`_${a}_${result}_${b}`);
+
+</script>
+</body>
+</html>

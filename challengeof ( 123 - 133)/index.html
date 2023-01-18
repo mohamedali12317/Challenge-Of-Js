@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+ <script>
+  // Assignment-1
+
+let setOfNumbers = new Set();
+
+setOfNumbers.add(10);
+setOfNumbers.add(20).add(setOfNumbers.size);  // هو طالب منى اضيف التوتال بتاعهم معاهم و 20 برضو
+
+console.log(setOfNumbers); // Set(3) {10, 20, 2}
+
+console.log(Array.from(setOfNumbers)[0]); // 10 عشان استدعى رقم بعينو من السيت لزم اعمل الطريقة دى الى هى بتاعت الفروم وبعدها اقول الرقم الى انا عايزة
+console.log(Array.from(setOfNumbers)[1]); // 20
+console.log(Array.from(setOfNumbers)[2]); // 2 
+
+console.log("=".repeat(40));
+"==================================================================="
+
+// Assignment-2
+
+let myFriends = ["Osama", "Ahmed", "Sayed", "Sayed", "Mahmoud", "Osama"];
+
+let newFriends = new Set(myFriends.sort());
+
+console.log(newFriends);
+
+// Needed Output
+// (4) ['Ahmed', 'Mahmoud', 'Osama', 'Sayed']
+
+console.log("=".repeat(40));
+"==================================================================="
+
+// Assignment-3
+
+let myInfo = {
+    username: "Osama",
+    role: "Admin",
+    country: "Egypt",
+};
+
+let newMap = new Map(Object.entries(myInfo));
+let newMap2 = new Map([[myInfo , "Object Value"]]);
+let newMap3 = new Map().set(myInfo , "Object Value");
+let newMap4 = new Map().set({myInfo} , "Object Value");
+
+console.log(newMap); // Map(3) {'username' => 'Osama', 'role' => 'Admin', 'country' => 'Egypt'}
+console.log(newMap2);
+console.log(newMap3);
+console.log(newMap4);
+console.log(newMap.size);
+console.log(newMap.has("role"));
+
+// Needed Output
+// Map(3) {'username' => 'Osama', 'role' => 'Admin', 'country' => 'Egypt'} 
+
+
+console.log("=".repeat(40));
+"==================================================================="
+
+// Assignment-4
+
+let theNumber = 100020003000;
+let theNumber2 = [1,2,2,2,1,3];
+let theNumber3 = [122213];
+
+console.log(+[...new Set(theNumber.toString())].sort().slice(true).join("")); // 123
+
+// console.log(...[new Set(theNumber)].join("")); // 123
+
+console.log(new Set(theNumber2)); // Set(3) {1, 2, 3}
+
+let arrfrom = [...new Set(theNumber3)].join('');
+console.log(Array.from(arrfrom)); //  ['1', '2', '2', '2', '1', '3']
+
+console.log([...new Set(theNumber3)]); // [122213]
+
+console.log([...new Set(theNumber3)].join('')); // 122213
+
+console.log(+[...new Set(theNumber3)].join('')); //122213  
+
+let set = [...new Set(theNumber3)].join('');
+console.log(set); // 122213 دى كاسترنج 
+console.log(new Set(set)); // Set(3) {'1', '2', '3'}
+
+let set2 = [...new Set(theNumber3)].join('');
+console.log(new Set(set2)); // Set(3) {'1', '2', '3'}
+
+console.log(Array.from(set2)); // (6) ['1', '2', '2', '2', '1', '3']
+let set3 = Array.from(set2);
+console.log(...[new Set(set3)]); // Set(3) {'1', '2', '3'}
+console.log([...new Set(set3)]); // (3) ['1', '2', '3']
+
+// console.log(new Set(theNumber));
+
+// Needed Output
+// 123
+
+
+console.log("=".repeat(40));
+"==================================================================="
+
+// Assignment-5
+
+let theName = "Elzero";
+
+// Needed Output
+// ['E', 'l', 'z', 'e', 'r', 'o']
+
+console.log(...theName); // E l z e r o
+console.log([...theName]); // (6) ['E', 'l', 'z', 'e', 'r', 'o']
+console.log(theName.split("")); // (6) ['E', 'l', 'z', 'e', 'r', 'o']
+console.log(Array.from(theName)); // (6) ['E', 'l', 'z', 'e', 'r', 'o']
+console.log(Object.assign([], theName)); // (6) ['E', 'l', 'z', 'e', 'r', 'o'] 
+console.log([...new Set(theName)]); // (6) ['E', 'l', 'z', 'e', 'r', 'o'] 
+
+console.log(Object.assign([], theName)); // [] وبعدها كمة واحط اللفريبول فا انا بقلو حطلى الحجات دى فى [] انا بقلو دى 
+console.log(Object.assign(theName)); // String {'Elzero'} خات بالك خالتها اوبجيكت
+
+console.log("=".repeat(40));
+"==================================================================="
+
+// Assignment-6
+
+// let chars = ["A", "B", "C", "D", "E", 10, 15, 6];
+
+// chars.sort();
+
+// console.log(chars);
+
+// chars.copyWithin(0, 3, 6);
+
+// console.log(chars);
+
+// // Needed Output
+// // ['A', 'B', 'C', 'A', 'B', 'C', 'D', 'E']
+
+// let chars = ["A", "B", "C", 20, "D", "E", 10, 15, 6];
+
+// chars.sort();
+
+// console.log(chars);
+
+// chars.copyWithin(0, 4, 8);
+
+// console.log(chars);
+
+// // Needed Output
+// // ['A', 'B', 'C', 'D', 'A', 'B', 'C', 'D', 'E']
+
+let chars = ["Z", "Y", "A", "D", "E", 10, 1];
+
+chars.copyWithin(2); // دا    بيكرر اول 2 فا اخر رقمين يعتبر اتشالو ["Z", "Y", "Z", "Y", "A", "D", "E"]
+
+console.log(chars);
+
+// Needed Output
+// ["Z", "Y", "Z", "Y", "A", "D", "E"]
+
+console.log("=".repeat(40));
+"==================================================================="
+
+// Assignment-7
+
+let numsOne = [1, 2, 3];
+let numsTwo = [4, 5, 6];
+
+console.log([...numsOne, ...numsTwo]);
+console.log(numsOne.concat(numsTwo));
+
+numsOne.push(...numsTwo);
+
+console.log(numsOne);
+
+// Needed Output
+// [1, 2, 3, 4, 5, 6]
+
+console.log("=".repeat(40));
+"==================================================================="
+
+// Assignment-8
+
+let n1 = [10, 30, 10, 20];
+let n2 = [30, 20, 10];
+
+console.log(Number(Math.max(...n1)) * [...n1, ...n2].length);
+
+console.log(Math.max(...n1) * [...n1, ...n2].length); 
+
+console.log(Number(Math.max(...n1))); // 30 
+
+console.log(Math.max(...n1)); // 30 
+
+
+// Needed Output
+// 210
+
+
+ </script>
+</body>
+</html>

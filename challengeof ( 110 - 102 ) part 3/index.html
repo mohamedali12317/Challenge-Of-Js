@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+
+  <div>10</div>
+
+ <script>
+  let div = document.querySelector("div");
+
+function countdown(){
+    div.innerHTML -= 1;
+    if(div.innerHTML === "0"){
+        clearInterval(counter);
+    }
+
+}
+
+
+let counter = setInterval(countdown, 1000);
+
+
+
+let di = document.createElement('div') ;
+
+di.className = 'number' ;
+
+di.setAttribute('data-test' , 'testing');
+
+// let myText = document.createTextNode(`hello`) ;
+
+// di.appendChild(myText);
+
+console.log(di);
+
+document.body.appendChild(di);
+
+
+function stop() {
+
+    let  counter = setInterval(clear, 2000);
+
+    function clear () {
+
+        di.innerHTML-= 1;
+
+        if (di.innerHTML === '-3') {
+            clearInterval(counter);
+            di.innerHTML =`hello mohamed ali`;
+        }
+    };
+
+};
+  
+stop();
+
+// setInterval(sayHello , 2000);
+
+// function sayHello() {
+//     console.log('hello');
+// }
+
+
+ </script>
+</body>
+</html>

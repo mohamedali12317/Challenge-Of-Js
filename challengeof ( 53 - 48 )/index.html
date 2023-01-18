@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+ <script>
+
+   let start2 = 0 , start3 = 10  , end = 100  , exciude = 40;
+
+  for (let i = start2 ; i <= end ; i+= start3) {
+    console.log(`${[i]}`);
+  } // 0  10 20 30 40 50 to 100
+
+
+     console.log("=".repeat(20));
+
+  // i want all numbers expet 40 
+
+  for (let i = start2 ; i < end ; i+= start3) {
+   if (i === exciude) {
+    continue;
+   }
+   
+   console.log(`${[i]}`);
+  } // 0  10 20 30  50 to 90
+
+     console.log("=".repeat(20));
+
+
+let startOne = 10;
+let endOne = 0;
+let stop = 3;
+
+for (let j = startOne; j > endOne; j--){
+    if (j < startOne){
+        console.log(`${endOne}${j}`)
+    }else {
+        console.log(`${j}`)
+    }
+
+    if(j === stop){
+        break;
+    }
+} // 10 09 08 07 06 05 04 03
+
+console.log("=".repeat(40));
+
+let startTwo = 1;
+let endTwo = 6;
+let breaker = 2;
+
+for(let k = startTwo; k <= endTwo; k++){
+    console.log(`${k}`);
+    for (let l = breaker; l < endTwo; l += breaker){
+        console.log(`-- ${l}`)
+    }
+} /*
+ 1
+-- 2
+-- 4
+2
+-- 2
+-- 4
+3
+-- 2
+-- 4
+4
+-- 2
+-- 4
+5
+-- 2
+-- 4
+6
+-- 2
+-- 4
+*/ 
+
+console.log("=".repeat(40));
+
+let index = 10;
+let jump = 2;
+let endThree = 0;
+let m = index;
+
+for (;;) {
+    // Write Your Code Here
+    if(m >= endThree){
+        console.log(`${m}`);
+    }
+    if (m === jump + jump){
+        break; // i told it to stop on 4
+    }
+    m -= jump
+}
+/*
+ Output
+10
+8
+6
+4
+*/ 
+
+console.log("=".repeat(40));
+
+
+/*
+ِ ِA هو هنا مش عايز اول حرف من ال 
+
+ومش عايز اكتب ارقام
+
+فا بعملها ازاى key and value وعايز اعمل 
+
+  number = letter.length;  فا هقول 
+     console.log(`"${number} => ${friends[o]}"`);
+    number++
+    انا كدة بقلو يبداء يعنى من 1
+
+
+ و هيطلع بصفر برضو letter.length - letter.length انا دى ممكن اقلو  o = 0 
+ لية عشان انا بقلو 1 - 1 = 0
+ 
+*/ 
+
+let friends = ["Ahmed", "Sayed", "Eman", "Mahmoud", "Ameer", "Osama", "Sameh"];
+let letter = "a";
+
+number = letter.length;
+for (let o = 0; o < friends.length; o++){
+    if(friends[o].startsWith(letter.toUpperCase())){
+        continue;
+    }
+    console.log(`"${number} => ${friends[o]}"`);
+    number++; // دا معنى 1 
+} /*
+    "1 => Sayed"
+    "2 => Eman"
+    "3 => Mahmoud"
+    "4 => Osama"
+    "5 => Sameh"
+*/
+
+console.log("=".repeat(40));
+
+// عايز احول الحروف الصغيرة الى الحروف الكبيرة والعكس صحيح 
+
+let startThree = 0;
+let swappedName = "elZerO";
+let result = "";
+
+for(let n = startThree; n < swappedName.length; n++){
+    if(swappedName[n] === swappedName[n].toLowerCase()){
+        result += swappedName[n].toUpperCase();
+    }else if(swappedName[n] === swappedName[n].toUpperCase()){
+        result += swappedName[n].toLowerCase();
+    }
+}
+console.log(result); // ELzERo انا طبعتهم فى الفريبول دوت
+
+console.log("=".repeat(40));
+
+
+// عايز يعمل اراقم بس وبترتيب ويبداء من 2 الى 4 
+
+// بس التركة الجامدة دى  v = startFour + mix.indexOf(2);
+    // لو تفتكر الاندكس اوف دى بتديها العنصر وتقولى دا رقمو كام فا بقولها فى رقم 2 فا اجابتو هتكون رقم 1
+    // طب لية 1 عشان لو عديت هتلقى 1
+    // فا 0 + 1 = 1 فا اكنى بقلو ابداء من رقم 1 الى هو رقم 2 الى رقم 4 
+
+let startFour = 0;
+let mix = [1, 2, 3, "A", "B", "C", 4];
+
+for(let v = startFour + mix.indexOf(2); v < mix.length; v++){
+    if(typeof mix[v] === "string"){
+        continue;
+    }
+    console.log(mix[v]);
+} // 2 3 4
+
+let name = 'mOhAMeD';
+o = "";
+for (let i = 0; i < name.length; i++) {
+    if (name [i] === name [i].toUpperCase()) {
+      o += name[i].toLowerCase()
+    } else {
+      o +=  name[i].toUpperCase();
+    }
+}
+console.log(o); // MoHamEd
+
+let na = name.split(' ').map((ele)=> ele === ele.toUpperCase() ? ele.toLowerCase() : ele.toUpperCase());
+console.log(na); // ['MOHAMED']
+
+
+let mo = name.split(' ').map(function (ele) {
+    return this === ele.toUpperCase() ? ele.toLowerCase() : ele.toUpperCase();
+});
+
+console.log(...mo); // MOHAMED
+
+  let ignoreNumers = `moh23456med`;
+
+ let  ign = ignoreNumers.split(``).filter(function(element){
+
+     return isNaN(parseFloat(element));
+
+      }).join("");
+            
+     console.log(ign); // mohmed
+ </script>
+</body>
+</html>
